@@ -78,9 +78,10 @@ Select a priority for the task:
         except:
             print("Invalid Input!")
             continue
+
+        record = [add_id, add_task, due_date, add_priority + "\n"]
 ####################
         #Confirm input
-        record = [add_id, add_task, due_date, add_priority + "\n"]
         print(f"\n{add_id}. || {add_task} || Due: {due_date} (Priority: {add_priority})")
         correct = input("\nIs this correct? [(Y)es/(N)o] || ").lower()
 
@@ -152,18 +153,18 @@ Select a priority for the task:
                     priority = "Low"
                 else:
                     priority = "Oops..."
-
+####################
         # Confirm record to be deleted
-        print(f"{record_id}. -- {record_task} || Due: {record_due} -- Priority: {priority}")
-        confirmation = input("\nWould you like to delete this record? (Y)es/(N)o || ").lower()
+                print(f"{record_id}. -- {record_task} || Due: {record_due} -- Priority: {priority}")
+                confirmation = input("\nWould you like to delete this record? (Y)es/(N)o || ").lower()
 
-        if confirmation in ("y", "yes"):
-            mainList.pop(int(record_id) - 1)
-        elif confirmation in ("n", "no"):
-            continue
-        else:
-            print("Invalid Input!")
-            continue
+                if confirmation in ("y", "yes"):
+                    mainList.pop(int(record_id) - 1)
+                elif confirmation in ("n", "no"):
+                    continue
+                else:
+                    print("Invalid Input!")
+                    continue
 ######################################################################
 # Save and exit
     if user_input == 4:
